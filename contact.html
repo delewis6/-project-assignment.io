@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rocky Blue Lodge #56 - Official Website">
-    <title>Rocky Blue Lodge 56</title>
+    <meta name="description" content="Rocky Blue Lodge #56 - Contact Us">
+    <title>Contact Us - Rocky Blue Lodge 56</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,49 +15,124 @@
     <main role="main">
         <div class="grid-container">
             <article class="grid-item">
-                <a href="events.html" aria-label="Navigate to Events and Activities">
-                    <img src="IMG_1905.PNG" 
-                         alt="Events and Activities" 
+                <a href="mailto:rockybluelodge@gmail.com" aria-label="Send an Email">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%237B68EE' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='24' fill='white' text-anchor='middle' dominant-baseline='middle'%3ESend an E-mail%3C/text%3E%3C/svg%3E" 
+                         alt="Send an Email" 
                          loading="lazy">
                     <div class="overlay">
-                        <h2>Events & Activities</h2>
+                        <h2>Send an E-mail</h2>
                     </div>
                 </a>
             </article>
 
             <article class="grid-item">
-                <a href="history.html" aria-label="Navigate to History and Heritage">
-                    <img src="IMG_1909.PNG" 
-                         alt="History and Heritage" 
+                <a href="#officers" aria-label="Navigate to Donations & Sponsors">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%2350C878' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3EDonations %26amp%3B Sponsors%3C/text%3E%3C/svg%3E" 
+                         alt="Donations & Sponsors" 
                          loading="lazy">
                     <div class="overlay">
-                        <h2>History & Heritage</h2>
+                        <h2>Donations & Sponsors</h2>
                     </div>
                 </a>
             </article>
 
             <article class="grid-item">
-                <a href="membership.html" aria-label="Navigate to Membership Information">
-                    <img src="IMG_1906.PNG" 
-                         alt="Membership Information" 
+                <a href="#inquiry-form" aria-label="Navigate to Volunteer">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23FF6B6B' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='24' fill='white' text-anchor='middle' dominant-baseline='middle'%3EVolunteer%3C/text%3E%3C/svg%3E" 
+                         alt="Volunteer" 
                          loading="lazy">
                     <div class="overlay">
-                        <h2>Membership Info</h2>
+                        <h2>Volunteer</h2>
                     </div>
                 </a>
             </article>
 
             <article class="grid-item">
-                <a href="contact.html" aria-label="Navigate to Contact Us">
-                    <img src="IMG_1907.PNG" 
-                         alt="Contact Us" 
+                <a href="index.html" aria-label="Navigate to Home">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23FFA500' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='24' fill='white' text-anchor='middle' dominant-baseline='middle'%3EHome%3C/text%3E%3C/svg%3E" 
+                         alt="Home" 
                          loading="lazy">
                     <div class="overlay">
-                        <h2>Contact Us</h2>
+                        <h2>Home</h2>
                     </div>
                 </a>
             </article>
         </div>
+
+        <section id="inquiry-form" class="form-section">
+            <div id="form-container">
+                <h2>Volunteer Form</h2>
+                <p>Please fill out the form below and we will get back to you as soon as possible.</p>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Home Address <span class="required">*</span></label>
+                        <textarea id="address" name="address" rows="3" required aria-required="true"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" name="message" rows="5"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Submit</button>
+                        <button type="reset" class="reset-btn">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="confirmation-message" class="confirmation-message" style="display: none;">
+                <div class="confirmation-icon">✓</div>
+                <h2>Thank You!</h2>
+                <p>Your inquiry has been successfully submitted.</p>
+                <p>We will get back to you as soon as possible.</p>
+                <button onclick="showForm()" class="back-btn">Submit Another Form</button>
+            </div>
+        </section>
+
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Hide the form container
+                document.getElementById('form-container').style.display = 'none';
+                
+                // Show the confirmation message
+                document.getElementById('confirmation-message').style.display = 'block';
+                
+                // Scroll to the confirmation message
+                document.getElementById('inquiry-form').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            function showForm() {
+                // Reset the form
+                document.getElementById('contactForm').reset();
+                
+                // Show the form container
+                document.getElementById('form-container').style.display = 'block';
+                
+                // Hide the confirmation message
+                document.getElementById('confirmation-message').style.display = 'none';
+                
+                // Scroll to the form
+                document.getElementById('inquiry-form').scrollIntoView({ behavior: 'smooth' });
+            }
+        </script>
     </main>
 
     <footer role="contentinfo">
